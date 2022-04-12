@@ -1,0 +1,74 @@
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+.brandList{
+  margin: 1% 10%;
+
+  .container{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: rgb(230, 230, 230);
+  
+    .card{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      height: 300px;
+
+      .viewCard{
+
+        a{
+          position: absolute;
+          z-index: 1;
+          background-color: rgb(210, 210, 255);
+          border-radius: 81px;
+          text-decoration: none;
+          color: rgb(0, 0, 255);
+          padding: 10px;
+          margin-top: -10px;
+        }
+      }
+
+      .alice-carousel__stage-item{
+        height: 280px;
+        // text-align: center;
+      }
+
+      .alice-carousel__dots{
+        margin-top: -10px;
+      }
+
+      .alice-carousel__dots-item{
+        width: 25px;
+        height: 3px;
+        border-radius: 0;
+        background-color: rgb(190, 150, 150);
+      }
+
+      .alice-carousel__dots-item.__active{
+        width: 40px;
+        height: 3px;
+        border-radius: 0;
+        background-color: rgb(70, 0, 0);
+      }
+    }
+  
+    .advertisement{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      height: 300px;
+      background-color: rgb(200, 200, 200);
+      text-align: center;
+  
+      a{
+        color: #000;
+        text-decoration: none;
+        font-size: 16px;
+      }
+    }
+  }
+}

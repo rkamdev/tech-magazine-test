@@ -1,0 +1,21 @@
+
+.productList  {
+  padding: 3% 10%;
+  
+  .container{
+
+    .category-name{
+      
+      p{
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+      }
+
+      hr{
+        background-color: rgb(90, 0, 0);
+        padding: 2px;
+      }
+    }
+  }
+}

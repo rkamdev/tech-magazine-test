@@ -1,0 +1,20 @@
+.footer{
+  background-color: #444;
+
+  .container{
+
+    .socials{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 100px;
+      font-size: 20px;
+      text-align: center;
+
+      ul{
+        list-style-type: none;
+      }
+    }
+  }
+}

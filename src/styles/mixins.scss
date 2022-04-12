@@ -1,0 +1,141 @@
+@mixin flex($isInline : false, $align-items: center, $justify-content: center, $flex-direction: row, $flex-wrap: wrap){
+    @if $isInline{
+        display: inline-flex;
+    }
+    @else{
+        display: flex;
+    }
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin fixed($top, $right, $bottom, $left) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin hideDropdown {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@mixin showDropdown {
+    opacity: 1;
+    z-index: auto;
+    visibility: visible;
+    pointer-events: all;
+}
+
+@mixin dropdown($position : left) {
+    position: absolute;
+    @if $position == left {
+        left: 0;
+    }
+    @if $position == right {
+        right: 0;
+    }
+}
+
+@mixin hover{
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        width: 30%;
+        background: rgba(255,255,255,0.3);
+        backdrop-filter: blur(5px);
+        left: -150%;
+        transform: skew(-20deg);
+    }
+
+    &:hover::after{
+        animation: animate .4s linear forwards;
+    }
+
+    @keyframes animate {
+        from{
+            left: -100px;
+        }
+        to{
+            left: 150%;
+        }
+    }
+}
+
+
+@mixin navLink {
+    color: black;
+    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px;
+    transition: 0.2s;
+    position: relative;
+    height: 100% !important;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      height: 1px;
+    }
+  
+    &:hover,
+    &.active {
+      color: $primary-orange;
+  
+      &::after {
+        background: $primary-orange;
+      }
+    }
+  }
+
+@mixin boxShadow(){
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+@mixin grid($column-count, $row-count : auto, $column-gap: 0, $row-gap: 0) {
+    display: grid;
+    grid-template-columns: $column-count;
+    grid-template-rows: $row-count;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}
+
+@mixin formField{
+    display: block;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: gray;
+    font-size: 18px;
+    border: 1px solid rgb(173, 173, 173);
+
+    &:hover{
+        border: 1px solid $primary-orange;
+    }
+    &:focus{
+        border: 1px solid $primary-orange;
+        box-shadow: 0 0 0px 2px rgba(255, 166, 0, 0.52); 
+    }
+}
+
+@mixin formLabel{
+    color: rgb(31, 31, 31);
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}

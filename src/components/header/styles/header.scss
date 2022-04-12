@@ -1,0 +1,118 @@
+$btnback : #fff;
+$hoverback : rgb(0, 0, 0);
+$headBack : rgb(70, 0, 0);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  width: 100%;
+  background-color: $headBack;
+  padding: 15px;
+  
+  .container{
+    background-color: $headBack;
+
+    ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 50px;
+      list-style-type: none;
+
+      .dropdown{
+        position: relative;
+        display: inline-block;
+        background-color: rgb(90, 0, 0);
+
+        .dropdown-toggler{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: $btnback;
+          padding: 10px;
+
+          &:hover{
+            color: $hoverback;
+          }
+        }
+
+        .dropdown-menu{
+          display: none;
+          position: absolute;
+          min-width: 160px;
+          box-shadow: 0 0 8px 4px rgba(0,0,0,0.5);
+          z-index: 1;
+
+          .dropdown-item{
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            color: $btnback;
+
+            &:hover{
+              background-color: rgb(255, 155, 155);
+              color: $hoverback;
+            }
+          }
+        }
+
+        &:hover{
+          color: $hoverback;
+
+          .dropdown-menu{
+            display: block;
+            background-color: $headBack;
+            font-size: 17px;
+            margin: 0;
+
+            &:hover{
+              color: $hoverback;
+            }
+          }
+        }
+      }
+
+      li{
+
+        a{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          background-color: rgb(90, 0, 0);
+          color: $btnback;
+          padding: 10px;
+
+          &:hover {
+            color: $hoverback;
+          }
+        }
+
+        %toolbelt{
+          font-size: 16px;
+
+          &::placeholder{
+            color: $btnback;
+          }
+        }
+
+        input{
+          background-color: inherit;
+          caret-color: red;
+          color: $btnback;
+          outline: none;
+          border: none;
+          width: 350px;
+          height: 20px;
+          padding: 16px;
+          @extend %toolbelt;
+        }
+      }
+    }
+  }
+}
