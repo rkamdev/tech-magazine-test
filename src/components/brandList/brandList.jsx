@@ -28,7 +28,7 @@ function BrandList(){
       <div className="container">
         <div className="card">
           <div className="viewCard">
-            <a href="#">Ko'rib chiqish→&rarr;</a>
+            <a href="#">Ko'rib chiqish&rarr;</a>
           </div>
           <AliceCarousel
             autoPlay
